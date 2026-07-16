@@ -1,0 +1,17 @@
+{
+  "name": "Jaime Lerga Marquina",
+  "role": {
+    "es": "Team Coach · Desarrollador Full Stack",
+    "en": "Team Coach · Full Stack Developer"
+  },
+  "tagline": {
+    "es": "Impulsando equipos y productos hacia una transformación digital.",
+    "en": "Driving teams and products toward digital transformation."
+  },
+  "location": "Barasoain, Navarra, España",
+  "email": "contacto@jlerga.dev",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/jlerga",
+    "github": "https://github.com/Rivet92"
+  }
+}

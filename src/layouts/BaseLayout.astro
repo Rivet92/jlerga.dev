@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  lang: 'es' | 'en';
+  pathname: string;
+  isPrint?: boolean;
+  snap?: boolean;
+}
+
+const { title, description, lang, pathname, isPrint = false, snap = false } = Astro.props;
+
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import SEO from '@/components/SEO.astro';
+import ThemeScript from '@/components/ThemeScript.astro';
+---
+<!doctype html>
+<html lang={lang} class:list={[snap && "snap-container"]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <ThemeScript />
+    <SEO title={title} description={description} lang={lang} pathname={pathname} />
+  </head>
+  <body class="flex min-h-screen flex-col bg-accent-100 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    {!isPrint && <Header lang={lang} pathname={pathname} />}
+    <main id="main-content" class="flex-1" tabindex="-1">
+      <slot />
+      {!isPrint && snap && <>
+        <Footer lang={lang} />
+        <div class="snap-end" />
+      </>}
+    </main>
+    {!isPrint && !snap && <Footer lang={lang} />}
+  </body>
+</html>

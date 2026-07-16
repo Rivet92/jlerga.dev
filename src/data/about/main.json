@@ -1,0 +1,24 @@
+{
+  "title": {
+    "es": "Sobre mí",
+    "en": "About me"
+  },
+  "paragraphs": [
+    {
+      "es": "Soy Team Coach y desarrollador full stack. Me gusta ayudar a los equipos a construir mejor software, combinando una base técnica sólida con un enfoque centrado en las personas y la mejora continua.",
+      "en": "I am a Team Coach and full-stack developer. I enjoy helping teams build better software by combining a strong technical foundation with a people-focused approach and a mindset of continuous improvement."
+    },
+    {
+      "es": "Actualmente trabajo en Bilbomática, acompañando a un equipo del Departamento de Derechos Sociales del Gobierno de Navarra en la modernización de aplicaciones legacy hacia .NET 10 y React.",
+      "en": "I currently work at Bilbomática, supporting a team at the Department of Social Rights of the Government of Navarre in the modernisation of legacy applications to .NET 10 and React."
+    },
+    {
+      "es": "Antes de dar el salto a la gestión de equipos, trabajé durante cinco años como desarrollador full stack para la Clínica Universidad de Navarra, especializándome en InterSystems IRIS for Health, .NET y React. Esa experiencia me permite comprender tanto los retos técnicos como las necesidades del equipo y del negocio.",
+      "en": "Before moving into team leadership, I worked for five years as a full-stack developer for Clínica Universidad de Navarra, specialising in InterSystems IRIS for Health, .NET and React. That experience allows me to understand both technical challenges and the needs of the team and the business."
+    },
+    {
+      "es": "Disfruto moviéndome entre distintos ámbitos: facilitando ceremonias Scrum, definiendo requisitos junto al Product Owner, apoyando el análisis técnico, diseñando interfaces en Figma o colaborando en despliegues cuando es necesario. Mi objetivo es eliminar fricción para que el equipo pueda centrarse en aportar valor.",
+      "en": "I enjoy working across different areas: facilitating Scrum ceremonies, defining requirements with the Product Owner, supporting technical analysis, designing interfaces in Figma, and helping with deployments whenever needed. My goal is to remove friction so the team can focus on delivering value."
+    }
+  ]
+}

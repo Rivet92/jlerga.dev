@@ -1,0 +1,52 @@
+---
+import type { Lang } from '@/types';
+import { t, getLocalized } from '@/i18n';
+import { inlineMarkdown } from '@/utils/markdown';
+import Section from './Section.astro';
+
+export interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const projectFiles = import.meta.glob('@/data/projects/*.json', { eager: true });
+const projects = Object.values(projectFiles).map((mod) => mod.default);
+projects.sort((a, b) => a.order - b.order);
+---
+<Section id="projects" title={t(lang, 'projects.title')}>
+  <div class="grid gap-8 md:grid-cols-2">
+    {projects.map((project) => (
+      <article class="group relative flex flex-col justify-between rounded-2xl border border-slate-300 p-6 transition hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600">
+        <div>
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">{getLocalized(project.title, lang)}</h3>
+            {project.award && (
+              <span class="shrink-0 rounded-full bg-accent-100 px-2 py-0.5 text-xs font-semibold text-accent-800 dark:bg-accent-900/40 dark:text-accent-300" title={t(lang, 'projects.award')}>
+                🏆
+              </span>
+            )}
+          </div>
+          <p class="mt-3 text-justify text-slate-700 dark:text-slate-300" set:html={inlineMarkdown(getLocalized(project.description, lang))}></p>
+        </div>
+        <div class="mt-6">
+          <div class="flex flex-wrap gap-2">
+            {project.stack.map((tech) => (
+              <span class="rounded-full bg-accent-100 px-2.5 py-1 text-xs font-medium text-accent-700 dark:bg-slate-800 dark:text-slate-400">{tech}</span>
+            ))}
+          </div>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-700 hover:text-accent-800 hover:underline dark:text-accent-300 dark:hover:text-accent-200"
+            >
+              {getLocalized(project.linkLabel!, lang)}
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</Section>

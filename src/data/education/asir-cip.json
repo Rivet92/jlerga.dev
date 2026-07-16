@@ -1,0 +1,14 @@
+{
+  "degree": {
+    "es": "CFGS Administración de Sistemas Informáticos en Red (ASIR)",
+    "en": "Higher Degree in Network Computer Systems Administration (ASIR)"
+  },
+  "school": "CIP Estella, Navarra",
+  "start": "2011-09",
+  "end": "2013-06",
+  "description": {
+    "es": "Sistemas, redes, telecomunicaciones, programación y control de versiones.",
+    "en": "Systems, networking, telecommunications, programming and version control."
+  },
+  "order": 2
+}

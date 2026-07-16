@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CvToolbar from '@/components/CvToolbar.astro';
+import CvContent from '@/components/CvContent.astro';
+import { t } from '@/i18n';
+
+const lang = 'es';
+const pathname = Astro.url.pathname;
+---
+<BaseLayout lang={lang} pathname={pathname} title={t(lang, 'cv.title')} isPrint>
+  <div class="print:hidden">
+    <div class="mx-auto max-w-4xl px-6 pt-6">
+      <CvToolbar lang={lang} />
+    </div>
+  </div>
+  <CvContent lang={lang} />
+</BaseLayout>
+
+<style is:global>
+  @media print {
+    body { background: white !important; color: black !important; }
+    @page { margin: 1.5cm; }
+  }
+</style>

@@ -1,0 +1,18 @@
+{
+  "company": "Cysnet",
+  "role": { "es": "Desarrollador", "en": "Developer" },
+  "client": {
+    "es": "Clínica Universidad de Navarra",
+    "en": "Clínica Universidad de Navarra"
+  },
+  "start": "2019-02",
+  "end": "2024-01",
+  "location": "Pamplona/Iruña, España",
+  "mode": { "es": "Presencial", "en": "On-site" },
+  "summary": {
+    "es": "Desarrollo full-stack en el ecosistema sanitario: integración Salesforce ↔ HIS legacy mediante un bus basado en InterSystems IRIS for Health, aplicaciones .NET Framework, React, FileMaker, Magnolia CMS y Oracle SQL.",
+    "en": "Full-stack development in the healthcare ecosystem: Salesforce ↔ legacy HIS integration through an InterSystems IRIS for Health-based bus, .NET Framework apps, React, FileMaker, Magnolia CMS and Oracle SQL."
+  },
+  "stack": ["InterSystems IRIS for Health", ".NET Framework", "React", "Docker", "Magnolia CMS", "Oracle SQL"],
+  "order": 2
+}

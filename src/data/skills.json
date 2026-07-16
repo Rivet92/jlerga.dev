@@ -1,0 +1,50 @@
+{
+  "categories": [
+    {
+      "name": { "es": "Agile & Coaching", "en": "Agile & Coaching" },
+      "items": [
+        { "es": "Scrum", "en": "Scrum" },
+        { "es": "SAFe", "en": "SAFe" },
+        { "es": "Gestión ágil de proyectos", "en": "Agile Project Management" },
+        { "es": "Team Coaching", "en": "Team Coaching" }
+      ]
+    },
+    {
+      "name": { "es": "Backend", "en": "Backend" },
+      "items": [
+        { "es": ".NET", "en": ".NET" },
+        { "es": ".NET Framework", "en": ".NET Framework" },
+        { "es": "Web Services API", "en": "Web Services API" },
+        { "es": "Oracle SQL", "en": "Oracle SQL" },
+        { "es": "InterSystems IRIS for Health", "en": "InterSystems IRIS for Health" }
+      ]
+    },
+    {
+      "name": { "es": "Frontend", "en": "Frontend" },
+      "items": [
+        { "es": "React", "en": "React" },
+        { "es": "Figma", "en": "Figma" },
+        { "es": "HTML/CSS", "en": "HTML/CSS" },
+        { "es": "Diseño de interfaces", "en": "Interface Design" }
+      ]
+    },
+    {
+      "name": { "es": "DevOps & Herramientas", "en": "DevOps & Tools" },
+      "items": [
+        { "es": "Jenkins", "en": "Jenkins" },
+        { "es": "Git", "en": "Git" },
+        { "es": "Despliegues", "en": "Deployments" },
+        { "es": "Integración continua", "en": "Continuous Integration" }
+      ]
+    },
+    {
+      "name": { "es": "Soft skills", "en": "Soft skills" },
+      "items": [
+        { "es": "Trabajo en equipo", "en": "Teamwork" },
+        { "es": "Full Stack", "en": "Full Stack" },
+        { "es": "Análisis técnico", "en": "Technical Analysis" },
+        { "es": "Comunicación", "en": "Communication" }
+      ]
+    }
+  ]
+}

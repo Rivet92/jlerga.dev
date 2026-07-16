@@ -1,0 +1,18 @@
+{
+  "company": "Bilbomática",
+  "role": { "es": "Team Coach", "en": "Team Coach" },
+  "client": {
+    "es": "Dpto. de Derechos Sociales — Gobierno de Navarra",
+    "en": "Dept. of Social Rights — Government of Navarre"
+  },
+  "start": "2025-03",
+  "end": null,
+  "location": "Pamplona/Iruña, España",
+  "mode": { "es": "Híbrido", "en": "Hybrid" },
+  "summary": {
+    "es": "Proyecto de renovación tecnológica migrando aplicaciones legacy a .NET 10 y React. Facilito el trabajo del equipo, colaboro con el Product Owner en requisitos y épicas, diseño de interfaces con Figma, realizo despliegues y apoyo en análisis técnico.",
+    "en": "Tech renewal project migrating legacy apps to .NET 10 and React. I coach the team, collaborate with the Product Owner on requirements and epics, help with UI design in Figma, handle deployments and support technical analysis."
+  },
+  "stack": [".NET 10", "React", "Figma", "SAFe", "Scrum", "Jenkins"],
+  "order": 1
+}

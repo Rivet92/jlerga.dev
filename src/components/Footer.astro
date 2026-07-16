@@ -1,0 +1,17 @@
+---
+import type { Lang } from '@/types';
+
+export interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+import { t } from '@/i18n';
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-slate-300 bg-accent-200/50 py-8 dark:border-slate-800 dark:bg-slate-900/50">
+  <div class="mx-auto max-w-5xl px-6 text-center text-sm text-slate-600 dark:text-slate-400">
+    © {year} Jaime Lerga Marquina. {t(lang, 'footer.rights')}
+  </div>
+</footer>

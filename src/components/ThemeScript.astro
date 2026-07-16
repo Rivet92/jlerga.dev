@@ -1,0 +1,38 @@
+<script is:inline>
+  (function() {
+    function initTheme() {
+      const stored = localStorage.getItem('theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      return theme;
+    }
+
+    function updateThemeIcons(theme) {
+      document.querySelectorAll('.theme-icon-light').forEach((el) => {
+        el.classList.toggle('hidden', theme === 'dark');
+      });
+      document.querySelectorAll('.theme-icon-dark').forEach((el) => {
+        el.classList.toggle('hidden', theme !== 'dark');
+      });
+    }
+
+    const theme = initTheme();
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => updateThemeIcons(theme));
+    } else {
+      updateThemeIcons(theme);
+    }
+
+    document.addEventListener('click', (e) => {
+      const toggle = e.target.closest('.theme-toggle');
+      if (!toggle) return;
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcons(next);
+    });
+  })();
+</script>

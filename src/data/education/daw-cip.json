@@ -1,0 +1,14 @@
+{
+  "degree": {
+    "es": "CFGS Desarrollo de Aplicaciones Web (DAW)",
+    "en": "Higher Degree in Web Application Development (DAW)"
+  },
+  "school": "CIP Estella, Navarra",
+  "start": "2017-10",
+  "end": "2020-01",
+  "description": {
+    "es": "Programación, bases de datos SQL y desarrollo web full-stack.",
+    "en": "Programming, SQL databases and full-stack web development."
+  },
+  "order": 1
+}
