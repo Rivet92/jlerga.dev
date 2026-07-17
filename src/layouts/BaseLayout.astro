@@ -26,6 +26,7 @@ import ThemeScript from '@/components/ThemeScript.astro';
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <ThemeScript />
     <SEO title={title} description={description} lang={lang} pathname={pathname} />
+    <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c323a0e6c61943c0b4b50bcd46a5aff0"}'></script>
   </head>
   <body class="flex min-h-screen flex-col bg-accent-100 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
     {!isPrint && <Header lang={lang} pathname={pathname} />}
