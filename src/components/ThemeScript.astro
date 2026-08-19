@@ -10,10 +10,10 @@
 
     function updateThemeIcons(theme) {
       document.querySelectorAll('.theme-icon-light').forEach((el) => {
-        el.classList.toggle('hidden', theme === 'dark');
+        el.classList.toggle('hidden', theme !== 'dark');
       });
       document.querySelectorAll('.theme-icon-dark').forEach((el) => {
-        el.classList.toggle('hidden', theme !== 'dark');
+        el.classList.toggle('hidden', theme === 'dark');
       });
     }
 
