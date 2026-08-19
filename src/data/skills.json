@@ -13,7 +13,6 @@
       "name": { "es": "Backend", "en": "Backend" },
       "items": [
         { "es": ".NET", "en": ".NET" },
-        { "es": ".NET Framework", "en": ".NET Framework" },
         { "es": "Web Services API", "en": "Web Services API" },
         { "es": "Oracle SQL", "en": "Oracle SQL" },
         { "es": "InterSystems IRIS for Health", "en": "InterSystems IRIS for Health" }
