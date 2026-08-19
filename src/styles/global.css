@@ -52,6 +52,10 @@ html[data-theme="dark"] {
   outline-offset: 2px;
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 button:focus:not(:focus-visible),
 a:focus:not(:focus-visible) {
   outline: none;
