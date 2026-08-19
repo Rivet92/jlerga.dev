@@ -3,33 +3,33 @@
 @custom-variant dark (&:where([data-theme="dark"] *));
 
 @theme {
-  /* Neutrals: Slate */
-  --color-slate-950: #020617;
-  --color-slate-900: #0f172a;
-  --color-slate-800: #1e293b;
-  --color-slate-700: #334155;
-  --color-slate-600: #475569;
-  --color-slate-500: #64748b;
-  --color-slate-400: #94a3b8;
-  --color-slate-300: #cbd5e1;
-  --color-slate-200: #e2e8f0;
-  --color-slate-100: #f1f5f9;
-  --color-slate-50: #f8fafc;
+  /* Neutrals: Neutral (pure gray, near-black in dark) */
+  --color-slate-950: #0a0a0a;
+  --color-slate-900: #171717;
+  --color-slate-800: #262626;
+  --color-slate-700: #404040;
+  --color-slate-600: #525252;
+  --color-slate-500: #737373;
+  --color-slate-400: #a3a3a3;
+  --color-slate-300: #d4d4d4;
+  --color-slate-200: #e5e5e5;
+  --color-slate-100: #f5f5f5;
+  --color-slate-50: #fafafa;
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  /* Accent: Indigo */
-  --color-accent-950: #1e1b4b;
-  --color-accent-900: #312e81;
-  --color-accent-800: #3730a3;
-  --color-accent-700: #4338ca;
-  --color-accent-600: #4f46e5;
-  --color-accent-500: #6366f1;
-  --color-accent-400: #818cf8;
-  --color-accent-300: #a5b4fc;
-  --color-accent-200: #c7d2fe;
-  --color-accent-100: #e0e7ff;
-  --color-accent-50: #eef2ff;
+  /* Accent: Green (terminal phosphor tones in dark) */
+  --color-accent-950: #052e16;
+  --color-accent-900: #14532d;
+  --color-accent-800: #166534;
+  --color-accent-700: #15803d;
+  --color-accent-600: #16a34a;
+  --color-accent-500: #22c55e;
+  --color-accent-400: #4ade80;
+  --color-accent-300: #86efac;
+  --color-accent-200: #bbf7d0;
+  --color-accent-100: #dcfce7;
+  --color-accent-50: #f0fdf4;
 }
 
 html {
