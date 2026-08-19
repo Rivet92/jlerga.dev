@@ -7,8 +7,8 @@
     "es": "Participé en la segunda edición del concurso de artículos técnicos en español organizado por InterSystems y obtuve el tercer premio.",
     "en": "I participated in the second edition of the Spanish Technical Article Contest organized by InterSystems and was awarded third prize."
   },
-  "stack": ["InterSystems IRIS", "Escritura técnica"],
-  "link": "https://es.community.intersystems.com/post/ganadores-del-2%C2%BA-concurso-de-art%C3%ADculos-t%C3%A9cnicos-en-espa%C3%B1ol",
+  "stack": [{ "es": "InterSystems IRIS", "en": "InterSystems IRIS" }, { "es": "Escritura técnica", "en": "Technical writing" }],
+  "link": "https://tinyurl.com/2cd39d7z",
   "linkLabel": { "es": "Ver artículo", "en": "Read article" },
   "award": true,
   "order": 2

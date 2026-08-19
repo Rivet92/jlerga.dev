@@ -13,9 +13,9 @@
       "name": { "es": "Backend", "en": "Backend" },
       "items": [
         { "es": ".NET", "en": ".NET" },
-        { "es": "Web Services API", "en": "Web Services API" },
-        { "es": "Oracle SQL", "en": "Oracle SQL" },
-        { "es": "InterSystems IRIS for Health", "en": "InterSystems IRIS for Health" }
+        { "es": "SQL", "en": "SQL" },
+        { "es": "InterSystems IRIS for Health", "en": "InterSystems IRIS for Health" },
+        { "es": "RabbitMQ", "en": "RabbitMQ" }
       ]
     },
     {
@@ -32,15 +32,14 @@
       "items": [
         { "es": "Jenkins", "en": "Jenkins" },
         { "es": "Git", "en": "Git" },
-        { "es": "Despliegues", "en": "Deployments" },
-        { "es": "Integración continua", "en": "Continuous Integration" }
+        { "es": "Docker", "en": "Docker" },
+        { "es": "Linux", "en": "Linux" }
       ]
     },
     {
       "name": { "es": "Soft skills", "en": "Soft skills" },
       "items": [
         { "es": "Trabajo en equipo", "en": "Teamwork" },
-        { "es": "Full Stack", "en": "Full Stack" },
         { "es": "Análisis técnico", "en": "Technical Analysis" },
         { "es": "Comunicación", "en": "Communication" }
       ]

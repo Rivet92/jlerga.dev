@@ -103,6 +103,7 @@ const firstProject = projects[0];
   }
 
   function goNext() {
+    if (animating !== null) return;
     if (currentReal === realCount - 1) {
       animating = snapLeft(cloneFirst);
       track.scrollTo({ left: animating, behavior: 'smooth' });
@@ -115,6 +116,7 @@ const firstProject = projects[0];
   }
 
   function goPrev() {
+    if (animating !== null) return;
     if (currentReal === 0) {
       animating = snapLeft(cloneLast);
       track.scrollTo({ left: animating, behavior: 'smooth' });
@@ -171,6 +173,19 @@ const firstProject = projects[0];
     update();
     applyDepth();
   }, { passive: true });
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (event) => {
+      if (animating !== null) return;
+      if ((event.target as HTMLElement).closest('a')) return;
+      const tr = track.getBoundingClientRect();
+      const cr = card.getBoundingClientRect();
+      const cardCenter = cr.left + cr.width / 2;
+      const trackCenter = tr.left + tr.width / 2;
+      if (cardCenter > trackCenter + 1) goNext();
+      else if (cardCenter < trackCenter - 1) goPrev();
+    });
+  });
 
   prevBtn.addEventListener('click', goPrev);
   nextBtn.addEventListener('click', goNext);

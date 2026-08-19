@@ -7,7 +7,7 @@
   },
   "start": "2025-03",
   "end": null,
-  "location": "Pamplona/Iruña, España",
+  "location": { "es": "Pamplona/Iruña, España", "en": "Pamplona/Iruña, Spain" },
   "mode": { "es": "Híbrido", "en": "Hybrid" },
   "summary": {
     "es": "Proyecto de renovación tecnológica migrando aplicaciones legacy a .NET 10 y React. Facilito el trabajo del equipo, colaboro con el Product Owner en requisitos y épicas, diseño de interfaces con Figma, realizo despliegues y apoyo en análisis técnico.",

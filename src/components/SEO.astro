@@ -11,7 +11,7 @@ export interface Props {
 const { title, description, lang, pathname } = Astro.props;
 
 import { defaultLang } from '@/types';
-import { t } from '@/i18n';
+import { t, getLocalized } from '@/i18n';
 import p from '@/data/profile/main.json';
 
 const siteUrl = 'https://jlerga.dev';
@@ -26,7 +26,7 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: p.name,
-  jobTitle: 'Team Coach / Full Stack Developer',
+  jobTitle: getLocalized(p.jobTitle, lang),
   url: siteUrl,
   sameAs: [p.links.linkedin, p.links.github],
   email: `mailto:${p.email}`,
@@ -36,6 +36,17 @@ const personSchema = {
     addressRegion: 'Navarra',
     addressCountry: 'ES',
   },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Bilbomática',
+  },
+  alumniOf: [
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'CIP Estella',
+    },
+  ],
+  knowsLanguage: ['Spanish', 'English'],
   knowsAbout: ['Scrum', 'SAFe', '.NET', 'React', 'InterSystems IRIS', 'Jenkins'],
 };
 ---
@@ -49,6 +60,8 @@ const personSchema = {
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
 <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
 <meta name="twitter:card" content="summary_large_image" />

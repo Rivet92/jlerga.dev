@@ -18,7 +18,7 @@ export interface ExperienceData {
   client: LocalizedText;
   start: string;
   end: string | null;
-  location: string;
+  location: LocalizedText;
   mode: LocalizedText;
   summary: LocalizedText;
   stack: string[];
@@ -27,7 +27,7 @@ export interface ExperienceData {
 
 export interface EducationData {
   degree: LocalizedText;
-  school: string;
+  school: LocalizedText;
   start: string;
   end: string;
   description: LocalizedText;

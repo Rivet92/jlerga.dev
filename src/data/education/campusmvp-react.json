@@ -1,0 +1,14 @@
+{
+  "degree": {
+    "es": "Curso de Desarrollo de aplicaciones web con React",
+    "en": "Course: Building web applications with React"
+  },
+  "school": { "es": "CampusMVP", "en": "CampusMVP" },
+  "start": "2026-06",
+  "end": "2026-06",
+  "description": {
+    "es": "Formación continua en desarrollo frontend con React, cubriendo componentes, estado y buenas prácticas.",
+    "en": "Continuous training in React frontend development, covering components, state and best practices."
+  },
+  "order": 1
+}

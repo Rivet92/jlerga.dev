@@ -40,7 +40,7 @@ function formatDate(value: string | null) {
               <span>—</span>
               <time datetime={item.end ?? undefined}>{formatDate(item.end)}</time>
               <span>·</span>
-              <span>{item.location}</span>
+              <span>{getLocalized(item.location, lang)}</span>
               <span>·</span>
               <span>{getLocalized(item.mode, lang)}</span>
             </div>

@@ -7,7 +7,7 @@
   },
   "start": "2019-02",
   "end": "2024-01",
-  "location": "Pamplona/Iruña, España",
+  "location": { "es": "Pamplona/Iruña, España", "en": "Pamplona/Iruña, Spain" },
   "mode": { "es": "Presencial", "en": "On-site" },
   "summary": {
     "es": "Desarrollo full-stack en el ecosistema sanitario: integración Salesforce ↔ HIS legacy mediante un bus basado en InterSystems IRIS for Health, aplicaciones .NET Framework, React, FileMaker, Magnolia CMS y Oracle SQL.",

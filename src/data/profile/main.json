@@ -4,11 +4,19 @@
     "es": "Team Coach · Desarrollador Full Stack",
     "en": "Team Coach · Full Stack Developer"
   },
-  "tagline": {
-    "es": "Impulsando equipos y productos hacia una transformación digital.",
-    "en": "Driving teams and products toward digital transformation."
+  "jobTitle": {
+    "es": "Team Coach / Desarrollador Full Stack",
+    "en": "Team Coach / Full Stack Developer"
   },
-  "location": "Barasoain, Navarra, España",
+  "tagline": {
+    "es": "Acompaño al equipo de desarrollo en la modernización de aplicaciones legacy bajo un marco de trabajo ágil.",
+    "en": "I support the development team in modernising legacy applications within an agile framework."
+  },
+  "location": { "es": "Barasoain, Navarra, España", "en": "Barasoain, Navarre, Spain" },
+  "languages": [
+    { "es": "Español", "en": "Spanish" },
+    { "es": "Inglés", "en": "English" }
+  ],
   "email": "contacto@jlerga.dev",
   "links": {
     "linkedin": "https://www.linkedin.com/in/jlerga",

@@ -1,0 +1,14 @@
+{
+  "degree": {
+    "es": "Curso de Desarrollo de aplicaciones web con Blazor y .NET",
+    "en": "Course: Building web applications with Blazor and .NET"
+  },
+  "school": { "es": "CampusMVP", "en": "CampusMVP" },
+  "start": "2025-04",
+  "end": "2025-04",
+  "description": {
+    "es": "Formación continua en desarrollo de aplicaciones web con Blazor y .NET.",
+    "en": "Continuous training in building web applications with Blazor and .NET."
+  },
+  "order": 2
+}

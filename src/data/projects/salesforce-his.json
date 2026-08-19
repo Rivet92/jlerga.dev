@@ -7,6 +7,11 @@
     "es": "Diseño e implementación de un bus de integración basado en InterSystems IRIS for Health para sincronizar Salesforce con el HIS legacy de la Clínica Universidad de Navarra.",
     "en": "Design and implementation of an InterSystems IRIS for Health-based integration bus to synchronise Salesforce with the legacy HIS at Clínica Universidad de Navarra."
   },
-  "stack": ["InterSystems IRIS for Health", "Salesforce", "Web Services API", "Oracle SQL"],
+  "stack": [
+    { "es": "InterSystems IRIS for Health", "en": "InterSystems IRIS for Health" },
+    { "es": "Salesforce", "en": "Salesforce" },
+    { "es": "Web Services API", "en": "Web Services API" },
+    { "es": "Oracle SQL", "en": "Oracle SQL" }
+  ],
   "order": 1
 }

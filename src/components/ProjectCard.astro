@@ -6,7 +6,7 @@ import { inlineMarkdown } from '@/utils/markdown';
 export interface ProjectData {
   title: LocalizedText;
   description: LocalizedText;
-  stack: string[];
+  stack: LocalizedText[];
   link?: string;
   linkLabel?: LocalizedText;
   award?: boolean;
@@ -22,7 +22,7 @@ export interface Props {
 const { project, lang, ariaHidden = false } = Astro.props;
 ---
 <article
-  class="flex w-[85%] shrink-0 snap-center flex-col justify-between rounded-2xl border border-slate-300 p-6 transition hover:border-slate-400 sm:w-[65%] md:w-[34rem] dark:border-slate-800 dark:hover:border-slate-600"
+  class="flex w-[85%] shrink-0 snap-center cursor-pointer flex-col justify-between rounded-2xl border border-slate-300 p-6 transition hover:border-slate-400 sm:w-[65%] md:w-[34rem] dark:border-slate-800 dark:hover:border-slate-600"
   aria-hidden={ariaHidden ? 'true' : undefined}
 >
   <div>
@@ -39,7 +39,7 @@ const { project, lang, ariaHidden = false } = Astro.props;
   <div class="mt-6">
     <div class="flex flex-wrap gap-2">
       {project.stack.map((tech) => (
-        <span class="rounded-full bg-accent-100 px-2.5 py-1 text-xs font-medium text-accent-700 dark:bg-slate-800 dark:text-slate-400">{tech}</span>
+        <span class="rounded-full bg-accent-100 px-2.5 py-1 text-xs font-medium text-accent-700 dark:bg-slate-800 dark:text-slate-400">{getLocalized(tech, lang)}</span>
       ))}
     </div>
     {project.link && (

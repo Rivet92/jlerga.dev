@@ -14,7 +14,6 @@ export const ui = {
     'theme.dark': 'Oscuro',
     'theme.toggle': 'Cambiar tema',
     'lang.switch': 'Cambiar idioma',
-    'hero.tagline': 'Team Coach · Desarrollador Full Stack · Scrum/SAFe',
     'hero.cta.contact': 'Contactar',
     'hero.cta.cv': 'Ver CV',
 
@@ -44,8 +43,10 @@ export const ui = {
     'cv.education': 'Educación',
     'cv.skills': 'Aptitudes',
     'cv.contact': 'Contacto',
+    'cv.projects': 'Proyectos',
+    'cv.languages': 'Idiomas',
     'cv.print': 'Imprimir / Guardar como PDF',
-    'seo.defaultTitle': 'Jaime Lerga Marquina — Team Coach & Full Stack Developer',
+    'seo.defaultTitle': 'Jaime Lerga Marquina — Team Coach & Desarrollador Full Stack',
     'seo.defaultDescription': 'Portfolio y CV de Jaime Lerga Marquina: Team Coach, desarrollador full-stack y especialista en Scrum/SAFe con experiencia en .NET, React e InterSystems IRIS.',
   },
   en: {
@@ -61,7 +62,6 @@ export const ui = {
     'theme.dark': 'Dark',
     'theme.toggle': 'Toggle theme',
     'lang.switch': 'Switch language',
-    'hero.tagline': 'Team Coach · Full Stack Developer · Scrum/SAFe',
     'hero.cta.contact': 'Get in touch',
     'hero.cta.cv': 'View CV',
 
@@ -91,6 +91,8 @@ export const ui = {
     'cv.education': 'Education',
     'cv.skills': 'Skills',
     'cv.contact': 'Contact',
+    'cv.projects': 'Projects',
+    'cv.languages': 'Languages',
     'cv.print': 'Print / Save as PDF',
     'seo.defaultTitle': 'Jaime Lerga Marquina — Team Coach & Full Stack Developer',
     'seo.defaultDescription': 'Portfolio and CV of Jaime Lerga Marquina: Team Coach, full-stack developer and Scrum/SAFe specialist with experience in .NET, React and InterSystems IRIS.',

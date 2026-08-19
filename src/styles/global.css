@@ -62,7 +62,7 @@ a:focus:not(:focus-visible) {
 }
 
 .snap-container {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 @media (width < 48rem) {
@@ -126,7 +126,7 @@ a:focus:not(:focus-visible) {
     color-scheme: light !important;
   }
   body {
-    background: var(--color-slate-50) !important;
+    background: #ffffff !important;
     color: var(--color-slate-950) !important;
   }
   .print\:hidden {
@@ -137,7 +137,7 @@ a:focus:not(:focus-visible) {
     color: inherit !important;
   }
   @page {
-    margin: 1.5cm;
+    margin: 1.3cm;
   }
   article, .cv-card {
     break-inside: avoid;
