@@ -5,10 +5,11 @@
   "description": "Landing personal de portfolio/CV de Jaime Lerga Marquina",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/generate-og.mjs && astro build",
+    "build": "node scripts/generate-og.mjs && node scripts/generate-cv-pdfs.mjs && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "generate:og": "node scripts/generate-og.mjs"
+    "generate:og": "node scripts/generate-og.mjs",
+    "pdf": "node scripts/generate-cv-pdfs.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@tailwindcss/vite": "^4.3.2",
+    "playwright": "^1.62.1",
     "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3",
     "zod": "^4.4.3"
