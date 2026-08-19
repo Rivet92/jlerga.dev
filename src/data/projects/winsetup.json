@@ -1,0 +1,14 @@
+{
+  "title": {
+    "es": "WinSetup — instalación desatendida de los programas que utilizo en mis equipos",
+    "en": "WinSetup — unattended installation of the programs I use on my machines"
+  },
+  "description": {
+    "es": "Conjunto de scripts PowerShell + winget y una web al estilo Windows XP para instalar toda mi configuración de programas de forma silenciosa. Scripts, listas y sitio se generan juntos en cada build.",
+    "en": "A set of PowerShell + winget scripts and a Windows XP-styled website to install my entire app setup silently. Scripts, package lists and the site are all generated together on each build."
+  },
+  "stack": ["PowerShell", "winget", "Astro", "GitHub Pages"],
+  "link": "https://winsetup.jlerga.dev",
+  "linkLabel": { "es": "Ver sitio", "en": "Visit site" },
+  "order": 3
+}
