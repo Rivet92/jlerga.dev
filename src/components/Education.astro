@@ -1,5 +1,5 @@
 ---
-import type { Lang } from '@/types';
+import type { Lang, EducationData } from '@/types';
 import { t, getLocalized } from '@/i18n';
 import { inlineMarkdown } from '@/utils/markdown';
 
@@ -8,7 +8,7 @@ export interface Props {
 }
 
 const { lang } = Astro.props;
-const educationFiles = import.meta.glob('@/data/education/*.json', { eager: true });
+const educationFiles = import.meta.glob<{ default: EducationData }>('@/data/education/*.json', { eager: true });
 const items = Object.values(educationFiles).map((mod) => mod.default);
 items.sort((a, b) => a.order - b.order);
 

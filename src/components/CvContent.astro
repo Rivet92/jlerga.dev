@@ -1,5 +1,5 @@
 ---
-import type { Lang } from '@/types';
+import type { Lang, ExperienceData, EducationData } from '@/types';
 import { t, getLocalized } from '@/i18n';
 import aboutData from '@/data/about/main.json';
 import skillsData from '@/data/skills.json';
@@ -11,8 +11,8 @@ export interface Props {
 
 const { lang } = Astro.props;
 
-const experienceFiles = import.meta.glob('@/data/experience/*.json', { eager: true });
-const educationFiles = import.meta.glob('@/data/education/*.json', { eager: true });
+const experienceFiles = import.meta.glob<{ default: ExperienceData }>('@/data/experience/*.json', { eager: true });
+const educationFiles = import.meta.glob<{ default: EducationData }>('@/data/education/*.json', { eager: true });
 
 const experience = Object.values(experienceFiles).map((mod) => mod.default);
 const education = Object.values(educationFiles).map((mod) => mod.default);

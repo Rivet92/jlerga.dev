@@ -1,5 +1,5 @@
 ---
-import type { Lang } from '@/types';
+import type { Lang, ExperienceData } from '@/types';
 import { t, getLocalized } from '@/i18n';
 import { inlineMarkdown } from '@/utils/markdown';
 import Section from './Section.astro';
@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { lang } = Astro.props;
-const experienceFiles = import.meta.glob('@/data/experience/*.json', { eager: true });
+const experienceFiles = import.meta.glob<{ default: ExperienceData }>('@/data/experience/*.json', { eager: true });
 const items = Object.values(experienceFiles).map((mod) => mod.default);
 items.sort((a, b) => a.order - b.order);
 
