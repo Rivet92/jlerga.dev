@@ -122,8 +122,8 @@ a:focus:not(:focus-visible) {
     color-scheme: light !important;
   }
   body {
-    background: white !important;
-    color: black !important;
+    background: var(--color-slate-50) !important;
+    color: var(--color-slate-950) !important;
   }
   .print\:hidden {
     display: none !important;

@@ -31,7 +31,7 @@ const oppositePath = pathname.replace(`/${lang}`, `/${oppositeLang}`);
       ))}
       <a
         href={translatePath('/cv')}
-        class="rounded-full bg-accent-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-accent-700 dark:bg-accent-400 dark:text-accent-950 dark:hover:bg-accent-300"
+        class="rounded-full bg-accent-600 px-3 py-1.5 text-sm font-medium text-slate-50 hover:bg-accent-700 dark:bg-accent-400 dark:text-accent-950 dark:hover:bg-accent-300"
       >
         {t(lang, 'nav.cv')}
       </a>
@@ -81,7 +81,7 @@ const oppositePath = pathname.replace(`/${lang}`, `/${oppositeLang}`);
       <button
         type="button"
         id="menu-toggle"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-md focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-md focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-slate-50"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label={t(lang, 'nav.mobile')}
