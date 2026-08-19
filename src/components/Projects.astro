@@ -1,5 +1,5 @@
 ---
-import type { Lang } from '@/types';
+import type { Lang, LocalizedText } from '@/types';
 import { t, getLocalized } from '@/i18n';
 import { inlineMarkdown } from '@/utils/markdown';
 import Section from './Section.astro';
@@ -8,15 +8,30 @@ export interface Props {
   lang: Lang;
 }
 
+interface ProjectData {
+  title: LocalizedText;
+  description: LocalizedText;
+  stack: string[];
+  link?: string;
+  linkLabel?: LocalizedText;
+  award?: boolean;
+  order: number;
+}
+
 const { lang } = Astro.props;
-const projectFiles = import.meta.glob('@/data/projects/*.json', { eager: true });
+const projectFiles = import.meta.glob<{ default: ProjectData }>('@/data/projects/*.json', { eager: true });
 const projects = Object.values(projectFiles).map((mod) => mod.default);
 projects.sort((a, b) => a.order - b.order);
 ---
 <Section id="projects" title={t(lang, 'projects.title')}>
-  <div class="grid gap-8 md:grid-cols-2">
+  <div
+    id="projects-track"
+    class="carousel-track flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    role="region"
+    aria-label={t(lang, 'projects.title')}
+  >
     {projects.map((project) => (
-      <article class="group relative flex flex-col justify-between rounded-2xl border border-slate-300 p-6 transition hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600">
+      <article class="flex w-[85%] shrink-0 snap-center flex-col justify-between rounded-2xl border border-slate-300 p-6 transition hover:border-slate-400 sm:w-[65%] md:w-[34rem] dark:border-slate-800 dark:hover:border-slate-600">
         <div>
           <div class="flex items-start justify-between gap-3">
             <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">{getLocalized(project.title, lang)}</h3>
@@ -49,4 +64,102 @@ projects.sort((a, b) => a.order - b.order);
       </article>
     ))}
   </div>
+
+  <div class="mt-6 flex items-center justify-between">
+    <button
+      type="button"
+      id="projects-prev"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-700 hover:bg-accent-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-900"
+      aria-label={t(lang, 'projects.prev')}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+    </button>
+
+    <div class="flex items-center gap-2" id="projects-dots"></div>
+
+    <button
+      type="button"
+      id="projects-next"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-700 hover:bg-accent-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-900"
+      aria-label={t(lang, 'projects.next')}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </button>
+  </div>
 </Section>
+
+<script>
+  const track = document.getElementById('projects-track') as HTMLElement;
+  const prevBtn = document.getElementById('projects-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('projects-next') as HTMLButtonElement;
+  const dotsContainer = document.getElementById('projects-dots') as HTMLElement;
+  if (!track || !prevBtn || !nextBtn || !dotsContainer) throw new Error('Projects carousel elements not found');
+
+  const cards = Array.from(track.querySelectorAll<HTMLElement>('article'));
+  const maxIndex = cards.length - 1;
+
+  const dots = cards.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `${i + 1}`);
+    dot.className = 'h-2 w-2 rounded-full bg-slate-300 transition dark:bg-slate-700';
+    dot.addEventListener('click', () => scrollToIndex(i));
+    dotsContainer.appendChild(dot);
+    return dot;
+  });
+
+  function maxScroll() {
+    return Math.max(0, track.scrollWidth - track.clientWidth);
+  }
+
+  function currentIndex() {
+    if (maxIndex <= 0 || maxScroll() <= 0) return 0;
+    return Math.round((track.scrollLeft / maxScroll()) * maxIndex);
+  }
+
+  function scrollToIndex(index: number) {
+    if (maxIndex <= 0) return;
+    const target = Math.max(0, Math.min(index, maxIndex));
+    track.scrollTo({ left: maxScroll() * (target / maxIndex), behavior: 'smooth' });
+  }
+
+  function update() {
+    const index = currentIndex();
+    prevBtn.disabled = index <= 0;
+    nextBtn.disabled = index >= maxIndex;
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-accent-600', i === index);
+      dot.classList.toggle('bg-slate-300', i !== index);
+      dot.classList.toggle('dark:bg-accent-400', i === index);
+      dot.classList.toggle('dark:bg-slate-700', i !== index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => scrollToIndex(currentIndex() - 1));
+  nextBtn.addEventListener('click', () => scrollToIndex(currentIndex() + 1));
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+</script>
+
+<style>
+  .carousel-track::before,
+  .carousel-track::after {
+    content: "";
+    flex: 0 0 calc((100% - 85%) / 2);
+  }
+
+  @media (min-width: 40rem) {
+    .carousel-track::before,
+    .carousel-track::after {
+      flex-basis: calc((100% - 65%) / 2);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .carousel-track::before,
+    .carousel-track::after {
+      flex-basis: calc((100% - 34rem) / 2);
+    }
+  }
+</style>

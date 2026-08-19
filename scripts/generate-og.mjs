@@ -9,6 +9,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const fontsDir = path.join(__dirname, 'fonts');
 
+const themeCss = fs.readFileSync(path.join(__dirname, '../src/styles/global.css'), 'utf-8');
+function themeColor(name) {
+  const match = themeCss.match(new RegExp(`--color-${name}\\s*:\\s*([^;]+);`));
+  if (!match) throw new Error(`Missing CSS variable --color-${name} in src/styles/global.css`);
+  return match[1].trim();
+}
+
 const profile = JSON.parse(
   fs.readFileSync(path.join(__dirname, '../src/data/profile/main.json'), 'utf-8'),
 );
@@ -19,6 +26,7 @@ function stripMarkdown(text) {
 
 const role = profile.role.es;
 const tagline = stripMarkdown(profile.tagline.es);
+const profileImage = `data:image/jpeg;base64,${fs.readFileSync(path.join(__dirname, '../public/profile.jpg')).toString('base64')}`;
 
 function h(type, props, ...children) {
   const flat = children.flat(Infinity).filter(c => c != null && c !== false && c !== true);
@@ -36,7 +44,7 @@ const svg = await satori(
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#0f172a',
+      backgroundColor: themeColor('slate-950'),
       fontFamily: 'Inter',
       padding: '64px',
     },
@@ -53,21 +61,23 @@ const svg = await satori(
           width: '140px',
           height: '140px',
           borderRadius: '50%',
-          backgroundColor: '#818cf8',
+          backgroundColor: themeColor('accent-500'),
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           flexShrink: 0,
+          overflow: 'hidden',
         },
       },
-        h('span', {
+        h('img', {
+          src: profileImage,
           style: {
-            fontSize: '56px',
-            fontWeight: 700,
-            color: '#1e1b4b',
-            lineHeight: 1,
+            width: '140px',
+            height: '140px',
+            objectFit: 'cover',
+            display: 'block',
           },
-        }, 'JL'),
+        }),
       ),
       h('div', {
         style: {
@@ -80,7 +90,7 @@ const svg = await satori(
           style: {
             fontSize: '48px',
             fontWeight: 600,
-            color: '#f1f5f9',
+            color: themeColor('slate-100'),
             lineHeight: 1.15,
             letterSpacing: '-0.02em',
           },
@@ -89,7 +99,7 @@ const svg = await satori(
           style: {
             fontSize: '26px',
             fontWeight: 500,
-            color: '#cbd5e1',
+            color: themeColor('slate-300'),
             lineHeight: 1.3,
           },
         }, role),
@@ -97,7 +107,7 @@ const svg = await satori(
           style: {
             fontSize: '20px',
             fontWeight: 400,
-            color: '#94a3b8',
+            color: themeColor('slate-400'),
             lineHeight: 1.4,
             maxWidth: '620px',
           },
